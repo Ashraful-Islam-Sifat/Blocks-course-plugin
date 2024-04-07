@@ -35,6 +35,10 @@ function* addTodo(title) {
 }
 function* toggleTodo(todo, index) {
   try {
+    yield updateTodo({
+      ...todo,
+      loading: true
+    }, index);
     const updatedTodo = yield (0,_controls__WEBPACK_IMPORTED_MODULE_1__.toggleTodo)(todo);
     return updateTodo(updatedTodo, index);
   } catch (error) {
@@ -252,10 +256,22 @@ function* getTodos() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getTodos: () => (/* binding */ getTodos)
+/* harmony export */   getDoneTodos: () => (/* binding */ getDoneTodos),
+/* harmony export */   getTodos: () => (/* binding */ getTodos),
+/* harmony export */   getTodosNumber: () => (/* binding */ getTodosNumber),
+/* harmony export */   getUnDoneTodos: () => (/* binding */ getUnDoneTodos)
 /* harmony export */ });
 const getTodos = state => {
   return state.items;
+};
+const getTodosNumber = state => {
+  return state.items.length;
+};
+const getDoneTodos = state => {
+  return state.items.filter(todo => todo.completed).length;
+};
+const getUnDoneTodos = state => {
+  return state.items.filter(todo => !todo.completed).length;
 };
 
 /***/ }),
