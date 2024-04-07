@@ -19,6 +19,7 @@ export function* addTodo(title) {
 
 export function* toggleTodo(todo, index){
     try {
+        yield updateTodo({ ...todo, loading: true }, index);
         const updatedTodo = yield toggleTodoControl(todo);
         return updateTodo(updatedTodo, index)
     } catch (error) {
