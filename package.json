@@ -13,6 +13,9 @@
     "@wordpress/scripts": "^27.6.0"
   },
   "dependencies": {
-    "@wordpress/data": "^9.25.0"
+    "@wordpress/components": "^27.3.0",
+    "@wordpress/data": "^9.25.0",
+    "@wordpress/edit-post": "^7.32.0",
+    "@wordpress/plugins": "^6.23.0"
   }
 }

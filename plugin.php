@@ -10,6 +10,9 @@
  *
  */
 
+ include_once('metabox.php');
+ include_once('templates.php');
+
 function blocks_course_plugin_enqueue_assets() {
 
     $asset_file = include(plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
