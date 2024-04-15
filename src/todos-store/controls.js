@@ -49,7 +49,7 @@ export default {
             throw new Error('Could not create todo.')
         });
     },
-    TOGGLE_TODO({todo}) {
+    TOGGLE_TODO({ todo }) {
         return window.fetch(`https://jsonplaceholder.typicode.com/todos/${todo.id}`, {
                     method: 'PATCH',
                     body: JSON.stringify({

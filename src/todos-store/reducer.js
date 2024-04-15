@@ -15,7 +15,7 @@ const reducer = ( state = DEFAULT_STATE, action ) => {
         case UPDATE_TODO: {
             const itemsCopy = [...state.items];
             itemsCopy[action.index] = action.todo;
-            return {...state, items:itemsCopy};
+            return {...state, items: itemsCopy};
         }
     
         default:
